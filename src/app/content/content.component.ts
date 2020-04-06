@@ -1,17 +1,23 @@
-import {Component, Input, OnInit} from '@angular/core';
+/* tslint:disable:variable-name */
+import {ChangeDetectorRef, Component, Input, NgZone, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {AppService} from '../app.service';
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.sass']
 })
-export class ContentComponent implements OnInit {
-  @Input() content: string;
-  @Input() name: string;
+export class ContentComponent implements OnChanges {
 
-  constructor() { }
+  @Input()  content: string;
 
-  ngOnInit() {
+  @Input()  name: string;
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.content) {
+        this.content = changes.content.currentValue;
+
+    }
   }
+
 
 }

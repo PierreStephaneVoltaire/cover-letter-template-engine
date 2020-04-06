@@ -7,6 +7,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContentComponent } from './content/content.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatInputModule, MatGridListModule, MatCardModule, MatSelectModule} from '@angular/material';
+import {NgxMdModule} from 'ngx-md';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,16 +16,19 @@ import {MatFormFieldModule, MatInputModule, MatGridListModule, MatCardModule, Ma
     ContentComponent
   ],
   imports: [
+    NgxMdModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatInputModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatGridListModule,
     MatFormFieldModule,
     MatCardModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMdModule
   ],
   providers: [],
   bootstrap: [AppComponent]

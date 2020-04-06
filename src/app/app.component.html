@@ -17,19 +17,23 @@
           <mat-label>Job Position</mat-label>
           <input class="form-input" formControlName="position" matInput  type="text"  placeholder="Name">
       </mat-form-field>
+
         <mat-form-field class="form-fields-full-width">
+
           <mat-label>Template</mat-label>
           <mat-select formControlName="template">
-            <mat-option  *ngFor="let template of templates;index as i" value="{{template.name}}">{{i}}-{{template.name}}</mat-option>
+              <mat-option  *ngFor="let template of (templates$|async);index as i" value="{{template.name}}">{{i}}-{{template.name}}</mat-option>
           </mat-select>
+
         </mat-form-field>
+
       </form>
       </mat-card>
     </div>
 
     <div class="columns col-6">
-      <app-content [content]="getContent()"></app-content>
 
+      <app-content *ngIf="(templates$|async)&&content.trim().length>0" [name]="name" [content]="content"></app-content>
     </div>
   </div>
   </div>
