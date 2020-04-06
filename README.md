@@ -1,5 +1,9 @@
 # TemplateEngine
 
+## simple template engine that lets the user make small changes to a markdown/html template
+
+![alt text](./bin/template.png "Logo Title Text 1")
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
 
 ## Development server
